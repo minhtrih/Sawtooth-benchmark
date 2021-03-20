@@ -1,0 +1,521 @@
+<!doctype html>
+<html>
+<head>
+    <title>Caliper Report</title>
+    <meta charset="UTF-8"/>
+    <style type="text/css">
+        .left-column {
+            position: fixed;
+            width:20%;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -khtml-border-radius: 5px;
+        }
+        .right-column {
+            margin-left: 22%;
+            width:60%;
+        }
+        .left-column ul,h2 {
+            display: block;
+            margin: 10px;
+            padding: 0;
+            list-style: none;
+        }
+        .left-column ul{
+            border-top: 1px solid #d9d9d9;
+            font-size: 14px;
+        }
+        .left-column li{
+            margin-bottom: 5px;
+            color: #5e6b73;
+        }
+        .left-column h3 {
+            border-left: 5px solid #009a61;
+        }
+        .right-column>div {
+            border-top: 1px solid #d9d9d9;
+        }
+        .right-column table {
+            font-family: verdana,arial,sans-serif;
+            font-size:11px;
+            color:#333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        .right-column th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #f2f2f2;
+        }
+        .right-column td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+        }
+        .tag {
+            display: inline-block;
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            background-color: rgba(1,126,102,0.08);
+            font-family: verdana,arial,sans-serif;
+            font-size:11px;
+            color: #017E66;
+            text-align: center;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -khtml-border-radius: 5px;
+        }
+        pre {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -khtml-border-radius: 5px;
+            overflow:auto;
+            max-height:300px;
+            font-size:12px;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <div class="left-column">
+        <h2>Caliper Report</h2>
+        <ul>
+            <h3>&nbspBasic information</h3>
+            <li><strong>DLT: &nbsp</strong><span>sawtooth</span></li>
+            <li><strong>Benchmark: &nbsp</strong><span></span></li>
+            <li><strong>Description: &nbsp</strong><span></span></li>
+            <li><strong>Test Rounds: &nbsp</strong><span>2</span></li>
+            <li><a href="#benchmarkInfo">Details</a></li>
+        </ul>
+        <ul>
+            <h3>&nbspBenchmark results</h3>
+            <li><a href="#benchmarksummary">Summary</a></li>
+            <li><a href="#round 0">round 0</a></li>
+            <li><a href="#round 1">round 1</a></li>
+        </ul>
+        <ul>
+            <h3>&nbspSystem Under Test</h3>
+            <li><a href="#sutdetails">Details</a></li>
+        </ul>
+    </div>
+
+    <div class="right-column">
+        <div id="benchmarksummary">
+            <table>
+                <h3>Summary</h3>
+                <tr>
+                     <th>Test</th> <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate</th> <th>Max Latency</th> <th>Min Latency</th> <th>Avg Latency</th> <th>75%ile Latency</th> <th>Throughput</th>
+                </tr>
+
+                <tr>
+                     <td>1</td> <td>open</td> <td>100</td> <td>0</td> <td>233 tps</td> <td>6.72 s</td> <td>1.30 s</td> <td>2.52 s</td> <td>2.51 s</td> <td>15 tps</td>
+                </tr>
+                <tr>
+                     <td>2</td> <td>query</td> <td>100</td> <td>0</td> <td>204 tps</td> <td>2.24 s</td> <td>0.78 s</td> <td>2.01 s</td> <td>2.11 s</td> <td>42 tps</td>
+                </tr>
+            </table>
+        </div>
+        <div id="round 0">
+            <h3>round 0&nbsp-&nbspopen</h3>
+            <strong class="tag">performance metrics</strong>
+            <table>
+                <tr>
+                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate</th> <th>Max Latency</th> <th>Min Latency</th> <th>Avg Latency</th> <th>75%ile Latency</th> <th>Throughput</th>
+                </tr>
+                <tr>
+                     <td>open</td> <td>100</td> <td>0</td> <td>233 tps</td> <td>6.72 s</td> <td>1.30 s</td> <td>2.52 s</td> <td>2.51 s</td> <td>15 tps</td>
+                </tr>
+            </table>
+            <strong class="tag">resource consumption</strong>
+            <table>
+                <tr>
+                     <th>TYPE</th> <th>NAME</th> <th>Memory(max)</th> <th>Memory(avg)</th> <th>CPU(max)</th> <th>CPU(avg)</th> <th>Traffic In</th> <th>Traffic Out</th>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-intkey-tp-python...ult-0</td> <td>19.7MB</td> <td>19.7MB</td> <td>0.06%</td> <td>0.02%</td> <td>241B</td> <td>105B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-settings-tp-default-0</td> <td>1.5MB</td> <td>1.5MB</td> <td>0.68%</td> <td>0.44%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-rest-api-default-3</td> <td>27.5MB</td> <td>27.5MB</td> <td>0.00%</td> <td>0.00%</td> <td>70B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-settings-tp-default-3</td> <td>1.5MB</td> <td>1.5MB</td> <td>0.69%</td> <td>0.43%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-engine-3</td> <td>32.3MB</td> <td>32.3MB</td> <td>0.03%</td> <td>0.01%</td> <td>990B</td> <td>66B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-xo-tp-python-def...ult-6</td> <td>19.7MB</td> <td>19.7MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-validator-default-1</td> <td>48.1MB</td> <td>47.3MB</td> <td>20.68%</td> <td>7.28%</td> <td>763.6KB</td> <td>648.6KB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-validator-default-5</td> <td>49.3MB</td> <td>48.4MB</td> <td>23.31%</td> <td>8.20%</td> <td>750.6KB</td> <td>649.3KB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-rest-api-default-4</td> <td>27.4MB</td> <td>27.4MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-engine-6</td> <td>32.3MB</td> <td>32.3MB</td> <td>0.02%</td> <td>0.01%</td> <td>990B</td> <td>66B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-rest-api-default-6</td> <td>27.5MB</td> <td>27.5MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-engine-2</td> <td>32.4MB</td> <td>32.4MB</td> <td>0.02%</td> <td>0.01%</td> <td>1.0KB</td> <td>66B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-xo-tp-python-def...ult-3</td> <td>19.7MB</td> <td>19.7MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-validator-r...-tp-4</td> <td>23.0MB</td> <td>23.0MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-xo-tp-python-def...ult-2</td> <td>19.7MB</td> <td>19.7MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-engine-4</td> <td>32.3MB</td> <td>32.3MB</td> <td>0.02%</td> <td>0.01%</td> <td>990B</td> <td>66B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-validator-default-4</td> <td>48.6MB</td> <td>47.7MB</td> <td>24.06%</td> <td>8.44%</td> <td>784.5KB</td> <td>660.8KB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-intkey-tp-python...ult-4</td> <td>19.6MB</td> <td>19.6MB</td> <td>0.00%</td> <td>0.00%</td> <td>42B</td> <td>42B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-xo-tp-python-def...ult-0</td> <td>19.7MB</td> <td>19.7MB</td> <td>0.07%</td> <td>0.02%</td> <td>171B</td> <td>105B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-intkey-tp-python...ult-6</td> <td>19.6MB</td> <td>19.6MB</td> <td>0.00%</td> <td>0.00%</td> <td>42B</td> <td>42B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-rest-api-default-0</td> <td>32.3MB</td> <td>32.3MB</td> <td>15.71%</td> <td>6.25%</td> <td>151.3KB</td> <td>218.7KB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-validator-r...-tp-1</td> <td>23.1MB</td> <td>23.1MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-engine-0</td> <td>32.6MB</td> <td>32.6MB</td> <td>2.38%</td> <td>1.52%</td> <td>195.0KB</td> <td>20.2KB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-xo-tp-python-def...ult-5</td> <td>19.7MB</td> <td>19.7MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-validator-default-6</td> <td>49.0MB</td> <td>48.6MB</td> <td>24.68%</td> <td>8.63%</td> <td>785.6KB</td> <td>661.0KB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-settings-tp-default-6</td> <td>1.5MB</td> <td>1.5MB</td> <td>0.68%</td> <td>0.44%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-intkey-tp-python...ult-2</td> <td>19.7MB</td> <td>19.7MB</td> <td>0.00%</td> <td>0.00%</td> <td>112B</td> <td>42B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-intkey-tp-python...ult-1</td> <td>19.6MB</td> <td>19.6MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-engine-5</td> <td>32.3MB</td> <td>32.3MB</td> <td>0.02%</td> <td>0.01%</td> <td>990B</td> <td>66B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-intkey-tp-python...ult-3</td> <td>19.6MB</td> <td>19.6MB</td> <td>0.00%</td> <td>0.00%</td> <td>42B</td> <td>42B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-validator-default-0</td> <td>117.7MB</td> <td>115.0MB</td> <td>81.09%</td> <td>38.38%</td> <td>479.7KB</td> <td>1.4MB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-rest-api-default-5</td> <td>27.4MB</td> <td>27.4MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-rest-api-default-1</td> <td>27.4MB</td> <td>27.4MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-settings-tp-default-1</td> <td>1.5MB</td> <td>1.5MB</td> <td>0.67%</td> <td>0.43%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-validator-r...-tp-5</td> <td>23.0MB</td> <td>23.0MB</td> <td>0.08%</td> <td>0.03%</td> <td>66B</td> <td>105B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-intkey-tp-python...ult-5</td> <td>19.6MB</td> <td>19.6MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-validator-r...-tp-2</td> <td>23.0MB</td> <td>23.0MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-validator-default-2</td> <td>48.8MB</td> <td>48.4MB</td> <td>22.36%</td> <td>7.81%</td> <td>727.1KB</td> <td>647.8KB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-settings-tp-default-5</td> <td>1.5MB</td> <td>1.5MB</td> <td>0.67%</td> <td>0.43%</td> <td>171B</td> <td>105B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-validator-default-3</td> <td>49.6MB</td> <td>48.8MB</td> <td>23.18%</td> <td>8.14%</td> <td>740.6KB</td> <td>636.5KB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-validator-r...-tp-3</td> <td>23.0MB</td> <td>23.0MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-xo-tp-python-def...ult-1</td> <td>19.6MB</td> <td>19.6MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-rest-api-default-2</td> <td>27.4MB</td> <td>27.4MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-engine-1</td> <td>32.4MB</td> <td>32.3MB</td> <td>0.02%</td> <td>0.01%</td> <td>990B</td> <td>66B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-validator-r...-tp-0</td> <td>23.0MB</td> <td>23.0MB</td> <td>0.06%</td> <td>0.02%</td> <td>171B</td> <td>105B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-settings-tp-default-4</td> <td>1.4MB</td> <td>1.4MB</td> <td>0.67%</td> <td>0.43%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-xo-tp-python-def...ult-4</td> <td>19.6MB</td> <td>19.6MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-settings-tp-default-2</td> <td>1.5MB</td> <td>1.5MB</td> <td>0.67%</td> <td>0.44%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-shell-default</td> <td>1.4MB</td> <td>1.4MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-validator-r...-tp-6</td> <td>23.0MB</td> <td>23.0MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+            </table>
+        </div>
+        <div id="round 1">
+            <h3>round 1&nbsp-&nbspquery</h3>
+            <strong class="tag">performance metrics</strong>
+            <table>
+                <tr>
+                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate</th> <th>Max Latency</th> <th>Min Latency</th> <th>Avg Latency</th> <th>75%ile Latency</th> <th>Throughput</th>
+                </tr>
+                <tr>
+                     <td>query</td> <td>100</td> <td>0</td> <td>204 tps</td> <td>2.24 s</td> <td>0.78 s</td> <td>2.01 s</td> <td>2.11 s</td> <td>42 tps</td>
+                </tr>
+            </table>
+            <strong class="tag">resource consumption</strong>
+            <table>
+                <tr>
+                     <th>TYPE</th> <th>NAME</th> <th>Memory(max)</th> <th>Memory(avg)</th> <th>CPU(max)</th> <th>CPU(avg)</th> <th>Traffic In</th> <th>Traffic Out</th>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-intkey-tp-python...ult-0</td> <td>19.7MB</td> <td>19.7MB</td> <td>0.05%</td> <td>0.05%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-settings-tp-default-0</td> <td>1.5MB</td> <td>1.5MB</td> <td>0.71%</td> <td>0.71%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-rest-api-default-3</td> <td>27.5MB</td> <td>27.5MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-settings-tp-default-3</td> <td>1.5MB</td> <td>1.5MB</td> <td>0.65%</td> <td>0.65%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-engine-3</td> <td>32.3MB</td> <td>32.3MB</td> <td>0.03%</td> <td>0.03%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-xo-tp-python-def...ult-6</td> <td>19.7MB</td> <td>19.7MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-validator-default-1</td> <td>48.1MB</td> <td>48.1MB</td> <td>0.58%</td> <td>0.58%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-validator-default-5</td> <td>49.4MB</td> <td>49.4MB</td> <td>0.68%</td> <td>0.68%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-rest-api-default-4</td> <td>27.4MB</td> <td>27.4MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-engine-6</td> <td>32.3MB</td> <td>32.3MB</td> <td>0.02%</td> <td>0.02%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-rest-api-default-6</td> <td>27.4MB</td> <td>27.4MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-engine-2</td> <td>32.3MB</td> <td>32.3MB</td> <td>0.02%</td> <td>0.02%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-xo-tp-python-def...ult-3</td> <td>19.7MB</td> <td>19.7MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-validator-r...-tp-4</td> <td>23.0MB</td> <td>23.0MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-xo-tp-python-def...ult-2</td> <td>19.7MB</td> <td>19.7MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-engine-4</td> <td>32.3MB</td> <td>32.3MB</td> <td>0.02%</td> <td>0.02%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-validator-default-4</td> <td>48.6MB</td> <td>48.6MB</td> <td>0.45%</td> <td>0.45%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-intkey-tp-python...ult-4</td> <td>19.6MB</td> <td>19.6MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-xo-tp-python-def...ult-0</td> <td>19.7MB</td> <td>19.7MB</td> <td>0.06%</td> <td>0.06%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-intkey-tp-python...ult-6</td> <td>19.6MB</td> <td>19.6MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-rest-api-default-0</td> <td>34.6MB</td> <td>34.6MB</td> <td>33.45%</td> <td>33.45%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-validator-r...-tp-1</td> <td>23.0MB</td> <td>23.0MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-engine-0</td> <td>32.6MB</td> <td>32.6MB</td> <td>0.44%</td> <td>0.44%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-xo-tp-python-def...ult-5</td> <td>19.7MB</td> <td>19.7MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-validator-default-6</td> <td>49.0MB</td> <td>49.0MB</td> <td>0.49%</td> <td>0.49%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-settings-tp-default-6</td> <td>1.5MB</td> <td>1.5MB</td> <td>0.64%</td> <td>0.64%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-intkey-tp-python...ult-2</td> <td>19.6MB</td> <td>19.6MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-intkey-tp-python...ult-1</td> <td>19.6MB</td> <td>19.6MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-engine-5</td> <td>32.3MB</td> <td>32.3MB</td> <td>0.07%</td> <td>0.07%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-intkey-tp-python...ult-3</td> <td>19.6MB</td> <td>19.6MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-validator-default-0</td> <td>117.7MB</td> <td>117.7MB</td> <td>84.71%</td> <td>84.71%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-rest-api-default-5</td> <td>27.4MB</td> <td>27.4MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-rest-api-default-1</td> <td>27.4MB</td> <td>27.4MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-settings-tp-default-1</td> <td>1.5MB</td> <td>1.5MB</td> <td>0.67%</td> <td>0.67%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-validator-r...-tp-5</td> <td>23.0MB</td> <td>23.0MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-intkey-tp-python...ult-5</td> <td>19.6MB</td> <td>19.6MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-validator-r...-tp-2</td> <td>22.9MB</td> <td>22.9MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-validator-default-2</td> <td>48.8MB</td> <td>48.8MB</td> <td>0.44%</td> <td>0.44%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-settings-tp-default-5</td> <td>1.5MB</td> <td>1.5MB</td> <td>0.69%</td> <td>0.69%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-validator-default-3</td> <td>49.6MB</td> <td>49.6MB</td> <td>0.49%</td> <td>0.49%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-validator-r...-tp-3</td> <td>23.0MB</td> <td>23.0MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-xo-tp-python-def...ult-1</td> <td>19.6MB</td> <td>19.6MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-rest-api-default-2</td> <td>27.3MB</td> <td>27.3MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-engine-1</td> <td>32.3MB</td> <td>32.3MB</td> <td>0.07%</td> <td>0.07%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-validator-r...-tp-0</td> <td>22.9MB</td> <td>22.9MB</td> <td>0.04%</td> <td>0.04%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-settings-tp-default-4</td> <td>1.4MB</td> <td>1.4MB</td> <td>0.67%</td> <td>0.67%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-xo-tp-python-def...ult-4</td> <td>19.6MB</td> <td>19.6MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-settings-tp-default-2</td> <td>1.5MB</td> <td>1.5MB</td> <td>0.65%</td> <td>0.65%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-shell-default</td> <td>1.4MB</td> <td>1.4MB</td> <td>0.01%</td> <td>0.01%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>sawtooth-poet-validator-r...-tp-6</td> <td>22.9MB</td> <td>22.9MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h3>Test Environment</h3>
+            <strong class="tag">benchmark config</strong>
+            <pre id="benchmarkInfo">{
+  &quot;clients&quot;: {
+    &quot;type&quot;: &quot;local&quot;,
+    &quot;number&quot;: 1
+  },
+  &quot;rounds&quot;: [
+    {
+      &quot;label&quot;: &quot;open&quot;,
+      &quot;txNumber&quot;: [
+        100
+      ],
+      &quot;rateControl&quot;: [
+        {
+          &quot;type&quot;: &quot;fixed-rate&quot;,
+          &quot;opts&quot;: {
+            &quot;tps&quot;: 200
+          }
+        }
+      ],
+      &quot;arguments&quot;: {
+        &quot;money&quot;: &quot;603d80600c6000396000f3007c01000000000000000000000000000000000000000000000000000000006000350463c6888fa18114602d57005b6007600435028060005260206000f3603d80600c6000396000f3007c01000000000000000000000000000000000000000000000000000000006000350463c6888fa18114602d57005b6007600435028060005260206000f3603d80600c6000396000f3007c01000000000000000000000000000000000000000000000000000000006000350463c6888fa18114602d57005b6007600435028060005260206000f3603d80600c6000396000f3007c01000000000000000000000000000000000000000000000000000000006000350463c6888fa18114602d57005b6007600435028060005260206000f3603d80600c6000396000f3007c01000000000000000000000000000000000000000000000000000000006000350463c6888fa18114602d57005b6007600435028060005260206000f3603d80600c6000396000f3007c01000000000000000000000000000000000000000000000000000000006000350463c6888fa18114602d57005b6007600435028060005260206000f3603d80600c6000396000f3007c01000000000000000000000000000000000000000000000000000000006000350463c6888fa18114602d57005b6007600435028060005260206000f3&quot;
+      },
+      &quot;callback&quot;: &quot;benchmark&#x2F;simple&#x2F;open.js&quot;
+    },
+    {
+      &quot;label&quot;: &quot;query&quot;,
+      &quot;txNumber&quot;: [
+        100
+      ],
+      &quot;rateControl&quot;: [
+        {
+          &quot;type&quot;: &quot;fixed-rate&quot;,
+          &quot;opts&quot;: {
+            &quot;tps&quot;: 200
+          }
+        }
+      ],
+      &quot;callback&quot;: &quot;benchmark&#x2F;simple&#x2F;query.js&quot;
+    }
+  ]
+}</pre>
+            <strong class="tag">SUT</strong>
+            <pre id="sutdetails">not provided</pre>
+        </div>
+    </div>
+
+
+</main>
+
+</body>
+</html>
